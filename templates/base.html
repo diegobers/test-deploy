@@ -1,4 +1,5 @@
 {% load static %}
+{% csrf_token %}
 <!doctype html>
 <html lang="pt-Br">
 
@@ -21,6 +22,22 @@
             </div>
         </nav>
 
+    <div class='container'> 
+      <div class='row'>  
+        {% for user in users %}
+         <div class='col-sm-4 col-md-4 col-lg-4 col-xl-4 my-2'> 
+          <div class="card w-100 mx-auto shadow" style="width: 16rem;" href="#">
+            <img src="{{user.img.url}}" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title">{{user.descricao}}</h5>
+            </div>
+          </div>  
+          
+         </div>
+        {% endfor %}       
+
+      </div> 
+    </div>
 
 
     </body>
